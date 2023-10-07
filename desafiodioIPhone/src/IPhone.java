@@ -1,39 +1,61 @@
-// Classe iPhone que implementa as interfaces
+// Classe que implementa o iPhone
 public class IPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
-    // Implementação dos métodos das interfaces
+    private boolean isPlaying = false;
+    private String currentSong = "";
+    private boolean isCallInProgress = false;
+    private String callNumber = "";
+    private boolean isBrowserOpen = false;
+    private String currentURL = "";
+
+    @Override
     public void tocar() {
-        // Lógica para tocar música
+        isPlaying = true;
+        // Implementação específica para tocar música no iPhone
     }
 
+    @Override
     public void pausar() {
-        // Lógica para pausar música
+        isPlaying = false;
+        // Implementação específica para pausar música no iPhone
     }
 
+    @Override
     public void selecionarMusica(String musica) {
-        // Lógica para selecionar uma música
+        currentSong = musica;
+        // Implementação específica para selecionar música no iPhone
     }
 
-    public void ligar() {
-        // Lógica para ligar o telefone
+    @Override
+    public void ligar(String numero) {
+        callNumber = numero;
+        // Implementação específica para ligar no iPhone
     }
 
+    @Override
     public void atender() {
-        // Lógica para atender uma chamada
+        isCallInProgress = true;
+        // Implementação específica para atender chamadas no iPhone
     }
 
-    public void iniciarCorreioVoz() {
-        // Lógica para iniciar o correio de voz
+    @Override
+    public void iniciarConversaVoz() {
+        // Implementação específica para iniciar conversa de voz no iPhone
     }
 
+    @Override
     public void exibirPagina(String url) {
-        // Lógica para exibir uma página na internet
+        currentURL = url;
+        isBrowserOpen = true;
+        // Implementação específica para exibir página web no iPhone
     }
 
+    @Override
     public void adicionarNovaAba(String url) {
-        // Lógica para adicionar uma nova aba no navegador
+        // Implementação específica para adicionar nova aba no navegador do iPhone
     }
 
+    @Override
     public void atualizarPagina() {
-        // Lógica para atualizar a página no navegador
+        // Implementação específica para atualizar página no navegador do iPhone
     }
 }
